@@ -5,9 +5,11 @@ import org.calculus.evaluation.Affirmation;
 import org.calculus.evaluation.Mensonge;
 import org.calculus.evaluation.Verite;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest
 class CalculusApplicationTests {
 
     @Test
@@ -18,7 +20,9 @@ class CalculusApplicationTests {
     void testCalculusRatiocinator() {
         CalculusRatiocinator cr = new CalculusRatiocinator();
         assertEquals("", cr.evaluate(null));
-        assertEquals("vrai", cr.evaluate(new Verite()));
+        assertEquals("vrai", cr.evaluate(new Verite("Lou est beau")));
+        assertEquals("vrai", cr.evaluate(new Verite("Lou est BEAU")));
+        assertEquals("vrai", cr.evaluate(new Verite("Lou est très beau")));
         assertEquals("faux", cr.evaluate(new Mensonge()));
         assertEquals("faux", cr.evaluate(new Affirmation("Lou est généreux")));
     }
