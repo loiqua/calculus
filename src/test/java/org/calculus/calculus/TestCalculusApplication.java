@@ -1,5 +1,6 @@
 package org.calculus.calculus;
 
+import org.calculus.CalculusApplication;
 import org.springframework.boot.SpringApplication;
 
 public class TestCalculusApplication {
