@@ -1,5 +1,8 @@
 package org.calculus.evaluation;
 
+import java.text.Normalizer;
+import java.util.regex.Pattern;
+
 public class Verite extends Evaluation {
     private String contenu;
 
@@ -9,7 +12,11 @@ public class Verite extends Evaluation {
 
     @Override
     public boolean evaluation() {
-        // Logique spécifique pour toute affirmation contenant "beau" (insensible à la casse)
-        return contenu.toLowerCase().contains("beau");
+        // Normaliser la chaîne pour supprimer les accents
+        String normalizedContent = Normalizer.normalize(contenu, Normalizer.Form.NFD);
+        normalizedContent = normalizedContent.replaceAll("\\p{M}", "").toLowerCase();
+
+        // Logique spécifique pour toute affirmation contenant "beau" (insensible à la casse et aux accents)
+        return normalizedContent.contains("beau");
     }
 }
