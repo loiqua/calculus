@@ -1,7 +1,6 @@
 package org.calculus.evaluation;
 
 import java.text.Normalizer;
-import java.util.regex.Pattern;
 
 public class Verite extends Evaluation {
     private String contenu;

@@ -25,8 +25,9 @@ class CalculusApplicationTests {
         assertEquals("vrai", cr.evaluate(new Verite("Lou est très beau")));
         assertEquals("faux", cr.evaluate(new Mensonge("Lou est pauvre")));
         assertEquals("faux", cr.evaluate(new Mensonge("Lou est PAUVRE")));
-        assertEquals("vrai", cr.evaluate(new Affirmation("Lou est généreux")));
-        assertEquals("vrai", cr.evaluate(new Affirmation("Lou est genereux")));
-        assertEquals("faux", cr.evaluate(new Affirmation("Lou est méchant")));
+        assertEquals("vrai", cr.evaluate(new Affirmation("Lou est beau et Lou est pauvre")));
+        assertEquals("vrai", cr.evaluate(new Affirmation("Lou est pauvre et Lou est généreux")));
+        assertEquals("vrai", cr.evaluate(new Affirmation("Lou est beau ou Lou est généreux et Lou est pauvre")));
+        assertEquals("vrai", cr.evaluate(new Affirmation("Premièrement : « Lou est beau ou Lou est généreux. Donc Lou est pauvre. » Et deuxièment : Lou est pauvre ou Lou est généreux »")));
     }
 }
