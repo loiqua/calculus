@@ -24,6 +24,8 @@ class CalculusApplicationTests {
         assertEquals("vrai", cr.evaluate(new Verite("Lou est BEAU")));
         assertEquals("vrai", cr.evaluate(new Verite("Lou est très beau")));
         assertEquals("faux", cr.evaluate(new Mensonge()));
-        assertEquals("faux", cr.evaluate(new Affirmation("Lou est généreux")));
+        assertEquals("vrai", cr.evaluate(new Affirmation("Lou est généreux")));
+        assertEquals("vrai", cr.evaluate(new Affirmation("Lou est genereux")));
+        assertEquals("faux", cr.evaluate(new Affirmation("Lou est méchant")));
     }
 }
