@@ -1,5 +1,5 @@
 package org.calculus.evaluation;
 
-public interface Evaluation {
-    boolean evaluation();
+public abstract class Evaluation {
+    public abstract boolean evaluation();
 }

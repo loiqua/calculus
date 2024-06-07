@@ -1,6 +1,6 @@
 package org.calculus.evaluation;
 
-public class Affirmation implements Evaluation {
+public class Affirmation extends Evaluation {
     private String contenu;
 
     public Affirmation(String contenu) {
